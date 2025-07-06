@@ -7,7 +7,7 @@ ARG UFLAVOR=""
 ARG USTREAM="latest"
 
 # Base Image
-FROM ghcr.io/ublue-os/$UBRAND-$UFLAVOR:$USTREAM
+FROM ghcr.io/ublue-os/${UBRAND}-${UFLAVOR}:${USTREAM}
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
 
 ### MODIFICATIONS

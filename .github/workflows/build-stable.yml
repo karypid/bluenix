@@ -110,7 +110,7 @@ jobs:
           labels: ${{ steps.metadata.outputs.labels }}
           build-args: |
             UBRAND="bluefin"
-            UFLAVOR=""
+            UFLAVOR="nvidia-open"
             USTREAM="stable"
           oci: false
 
