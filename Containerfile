@@ -1,13 +1,15 @@
 # Allow build scripts to be referenced without being copied into the final image
-FROM scratch AS ctx
-COPY build_files /
-
 ARG UBRAND=bluefin
 ARG UFLAVOR=
 ARG USTREAM=latest
 
+ARG SOURCE_IMAGE=${UBRAND}${UFLAVOR:+x}${UFLAVOR}:${USTREAM}
+
+FROM scratch AS ctx
+COPY build_files /
+
 # Base Image
-FROM ghcr.io/ublue-os/${UBRAND}-${UFLAVOR}:${USTREAM} AS base
+FROM ghcr.io/ublue-os/${SOURCE_IMAGE} AS base
 # FROM ghcr.io/ublue-os/bluefin-nvidia:stable
 
 ### MODIFICATIONS
