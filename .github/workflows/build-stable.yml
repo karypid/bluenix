@@ -30,7 +30,8 @@ jobs:
     name: Build and push image
     runs-on: ubuntu-24.04
     strategy:
-      brand_name: [ "bluefin", "bluefin-dx" ]
+      matrix:
+        brand_name: [ "bluefin", "bluefin-dx" ]
 
     permissions:
       contents: read
