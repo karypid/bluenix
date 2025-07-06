@@ -27,6 +27,9 @@ jobs:
   build_push:
     name: Build and push image
     runs-on: ubuntu-24.04
+    strategy:
+      matrix:
+        brand_name: [ "bluefin", "bluefin-dx" ]
 
     permissions:
       contents: read
@@ -107,7 +110,7 @@ jobs:
           tags: ${{ steps.metadata.outputs.tags }}
           labels: ${{ steps.metadata.outputs.labels }}
           build-args: |
-            UBRAND=bluefin
+            UBRAND=${{ matrix.brand_name }}
             UFLAVOR=nvidia-open
             USTREAM=latest
           oci: false
