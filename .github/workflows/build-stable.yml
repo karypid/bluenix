@@ -29,6 +29,8 @@ jobs:
   build_push:
     name: Build and push image
     runs-on: ubuntu-24.04
+    strategy:
+      brand_name: [ "bluefin", "bluefin-dx" ]
 
     permissions:
       contents: read
@@ -100,8 +102,6 @@ jobs:
       - name: Build Image
         id: build_image
         uses: redhat-actions/buildah-build@7a95fa7ee0f02d552a32753e7414641a04307056 # v2
-        strategy:
-          brands: [ "bluefin", "bluefin-dx" ]
         with:
           containerfiles: |
             ./Containerfile
