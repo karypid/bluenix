@@ -30,6 +30,10 @@ jobs:
     strategy:
       matrix:
         brand_name: [ "bluefin", "bluefin-dx" ]
+        brand_name:
+          - bluefin
+          - bluefin-dx
+            env: IMAGE_NAME=bluenix-dx
 
     permissions:
       contents: read
