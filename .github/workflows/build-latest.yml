@@ -29,7 +29,6 @@ jobs:
     runs-on: ubuntu-24.04
     strategy:
       matrix:
-        brand_name: [ "bluefin", "bluefin-dx" ]
         brand_name:
           - bluefin
           - bluefin-dx
