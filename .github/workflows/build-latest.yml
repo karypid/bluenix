@@ -30,6 +30,7 @@ jobs:
     strategy:
       matrix:
         brand_suffix: [ "", "-dx" ]
+        brand_flavor: [ "", "-nvidia-open" ]
 
     permissions:
       contents: read
@@ -41,7 +42,7 @@ jobs:
         run: |
           # Lowercase the image uri
           echo "IMAGE_REGISTRY=${IMAGE_REGISTRY,,}" >> ${GITHUB_ENV}
-          echo "IMAGE_NAME=${IMAGE_NAME,,}${{ matrix.brand_suffix }}" >> ${GITHUB_ENV}
+          echo "IMAGE_NAME=${IMAGE_NAME,,}${{ matrix.brand_suffix }}${{ matrix.brand_flavor }}" >> ${GITHUB_ENV}
 
       # These stage versions are pinned by https://github.com/renovatebot/renovate
       - name: Checkout
@@ -111,7 +112,7 @@ jobs:
           labels: ${{ steps.metadata.outputs.labels }}
           build-args: |
             UBRAND=bluefin${{ matrix.brand_suffix }}
-            UFLAVOR=nvidia-open
+            UFLAVOR=${{ martix.brand_flavor }}
             USTREAM=latest
           oci: false
 
