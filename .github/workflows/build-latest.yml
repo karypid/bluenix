@@ -112,7 +112,7 @@ jobs:
           labels: ${{ steps.metadata.outputs.labels }}
           build-args: |
             UBRAND=bluefin${{ matrix.brand_suffix }}
-            UFLAVOR=${{ martix.brand_flavor }}
+            UFLAVOR=${{ matrix.brand_flavor }}
             USTREAM=latest
           oci: false
 
