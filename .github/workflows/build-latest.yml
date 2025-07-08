@@ -31,6 +31,10 @@ jobs:
       matrix:
         brand_suffix: [ "", "-dx" ]
         brand_flavor: [ "", "-nvidia-open" ]
+        brand_stream: [ "stable" ]
+          - stable:
+            schedule:
+              - cron: '05 12 * * *'  # 10:05am UTC everyday
 
     permissions:
       contents: read
