@@ -18,4 +18,8 @@ jobs:
     secrets: inherit
     with:
       stream_name: latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
 
