@@ -15,11 +15,11 @@ jobs:
   build_push_latest:
     name: Build and push latest image
     uses: ./.github/workflows/base_build.yml
-    secrets: inherit
-    with:
-      stream_name: latest
     permissions:
       contents: read
       packages: write
       id-token: write
+    secrets: inherit
+    with:
+      stream_name: latest
 

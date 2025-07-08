@@ -33,11 +33,6 @@ jobs:
       matrix:
         brand_name: [ "bluefin", "bluefin-dx" ]
 
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
-
     steps:
       - name: Prepare environment
         run: |

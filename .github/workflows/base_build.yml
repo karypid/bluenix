@@ -9,8 +9,6 @@ on:
         type: string
         default: latest
 
-permissions: inherit
-
 env:
   IMAGE_DESC: "Bluefin Image with /nix"
   IMAGE_KEYWORDS: "bootc,ublue,universal-blue,bluefin,nix"
