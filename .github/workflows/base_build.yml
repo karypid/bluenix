@@ -9,6 +9,8 @@ on:
         type: string
         default: latest
 
+permissions: inherit
+
 env:
   IMAGE_DESC: "Bluefin Image with /nix"
   IMAGE_KEYWORDS: "bootc,ublue,universal-blue,bluefin,nix"
@@ -30,9 +32,6 @@ jobs:
         brand_suffix: [ "", "-dx" ]
         brand_flavor: [ "", "-nvidia-open" ]
         stream_name: ["${{ inputs.stream_name }}"]
-
-    permissions:
-      inherit
 
     steps:
       - name: Prepare environment
