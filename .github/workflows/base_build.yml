@@ -31,10 +31,10 @@ jobs:
         brand_flavor: [ "", "-nvidia-open" ]
         stream_name: ["${{ inputs.stream_name }}"]
 
-    permissions:
-      contents: read
-      packages: write
-      id-token: write
+#    permissions:
+#      contents: read
+#      packages: write
+#      id-token: write
 
     steps:
       - name: Prepare environment
