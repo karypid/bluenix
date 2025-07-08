@@ -1,15 +1,13 @@
 ---
 name: Build container images
 on:
-  pull_request:
-    branches:
-      - main
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - '**/README.md'
-  workflow_dispatch:
+  workflow_call:
+    inputs:
+      stream_name:
+        description: "The stream: stable, or latest"
+        required: true
+        type: string
+        default: latest
 
 env:
   IMAGE_DESC: "Bluefin Image with /nix"
